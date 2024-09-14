@@ -17,6 +17,6 @@ public class Student {
     private String firstName;
     private String lastName;
     private LocalDate birthday;
-    private boolean scholarship;
+    private Boolean scholarship;
     private StudentStatus status;
 }
