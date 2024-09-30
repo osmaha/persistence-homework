@@ -2,6 +2,7 @@ package com.verong.demo.database.hibernate.persistence.dao;
 
 import com.verong.demo.database.hibernate.persistence.dto.StudentIdAndNameDto;
 import com.verong.demo.database.hibernate.persistence.model.Student;
+import com.verong.demo.database.hibernate.persistence.model.StudentStatus;
 
 import java.util.List;
 import java.util.Optional;
@@ -59,6 +60,17 @@ public interface StudentDao {
      * @param scholarship a boolean value that indicates whether a student has a scholarship or does not have.
      */
     List<StudentIdAndNameDto> findByScholarshipUsingCriteriaApi(Boolean scholarship);
+
+    /**
+     *
+     * This method finds a {@link Student} in a database and updates the status of the found {@link Student}.
+     *
+     * @throws java.util.NoSuchElementException if a student is not found by passed ID.
+     *
+     * @param id student ID.
+     * @param status {@link StudentStatus} that has to be set to the request {@link Student}.
+     */
+    void updateStatus(Long id, StudentStatus status);
 
     /**
      * This method deletes all student's data from a database using the value of ID of the passed {@link Student}.
