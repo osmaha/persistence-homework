@@ -91,6 +91,18 @@ public class Application {
         System.out.println("List of found students without scholarship (using Criteria API):");
         studentsWithoutScholarshipUsingCriteriaApi.forEach(System.out::println);
 
+        /* Update student's status by id */
+        var studentIdToUpdate = 2L;
+        var statusToUpdate = StudentStatus.DROPPED;
+
+        var studentBeforeUpdate = studentDao.findById(studentIdToUpdate).orElseThrow();
+        System.out.println("Student with Id %d has the following status: %s".formatted(studentIdToUpdate, studentBeforeUpdate.getStatus()));
+
+        studentDao.updateStatus(studentIdToUpdate, statusToUpdate);
+
+        var studentAfterUpdate = studentDao.findById(studentIdToUpdate).orElseThrow();
+        System.out.println("Student with Id %d has the following status: %s".formatted(studentIdToUpdate, studentAfterUpdate.getStatus()));
+
 
         /* Remove student by id */
         var studentIdToDelete = 1L;

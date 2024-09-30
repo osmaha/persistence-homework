@@ -2,6 +2,7 @@ package com.verong.demo.database.hibernate.persistence.dao;
 
 import com.verong.demo.database.hibernate.persistence.dto.StudentIdAndNameDto;
 import com.verong.demo.database.hibernate.persistence.model.Student;
+import com.verong.demo.database.hibernate.persistence.model.StudentStatus;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.TypedQuery;
@@ -87,6 +88,17 @@ public class StudentDaoImpl implements StudentDao {
             selectByScholarshipQuery.setParameter(scholarshipParameter, scholarship);
 
             return selectByScholarshipQuery.getResultList();
+        });
+    }
+
+    @Override
+    public void updateStatus(Long id, StudentStatus status) {
+        Objects.requireNonNull(id, "Student ID cannot be null");
+        Objects.requireNonNull(status, "Student status cannot be null");
+
+        doInTransaction(em -> {
+            var student = em.find(Student.class, id);
+            student.setStatus(status);
         });
     }
 
