@@ -24,5 +24,12 @@
             <version>1.18.34</version>
         </dependency>
 
+        <!-- I have added postgreSQL JDBC Driver to communicate with PostgreSQL Database-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+
     </dependencies>
 </project>
