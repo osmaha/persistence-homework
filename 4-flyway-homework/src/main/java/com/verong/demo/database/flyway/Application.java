@@ -20,6 +20,11 @@ public class Application {
                 * alter table to add additional column -> V4__add_new_column.sql;
 
             - check database that all SQL scripts have been executed correctly;
+
+            IMPORTANT:  You can add one or more files of migration and run a migration just to see how it works.
+                        Flyway prints a list of logs you to be able to understand the current version of your database.
+                        Try to add next migration file and run your program to see that previous migrations will be skipped
+                        since they have been already run by Flyway.
         */
 
         //TODO: create the Flyway instance and run migrations
