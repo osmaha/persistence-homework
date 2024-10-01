@@ -89,7 +89,6 @@ public class StudentDaoImpl implements StudentDao {
 
     private Student findStudentById(Long id, Connection connection) throws SQLException {
         var selectByIdStatement = prepareSelectStudentByIdStatement(id, connection);
-        selectByIdStatement.setLong(1, id);
         var resultSet = selectByIdStatement.executeQuery();
         return resultSet.next() ? parseStudentRow(resultSet) : null;
     }
