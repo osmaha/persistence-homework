@@ -1,0 +1,22 @@
+INSERT INTO students (email, first_name, last_name, birthday, scholarship, status)
+VALUES 
+('john.doe1@example.com', 'John', 'Doe', '2001-03-12', true, 'ACTIVE'),
+('jane.smith2@example.com', 'Jane', 'Smith', '2000-11-22', false, 'GRADUATED'),
+('alice.brown3@example.com', 'Alice', 'Brown', '1999-05-17', true, 'SUSPENDED'),
+('bob.jones4@example.com', 'Bob', 'Jones', '2002-07-30', false, 'DROPPED'),
+('charlie.johnson5@example.com', 'Charlie', 'Johnson', '2001-09-03', true, 'ACTIVE'),
+('diana.wilson6@example.com', 'Diana', 'Wilson', '2000-02-10', false, 'GRADUATED'),
+('eve.martin7@example.com', 'Eve', 'Martin', '1998-12-12', true, 'SUSPENDED'),
+('frank.white8@example.com', 'Frank', 'White', '2002-03-25', false, 'DROPPED'),
+('george.hall9@example.com', 'George', 'Hall', '2001-06-15', true, 'ACTIVE'),
+('hannah.king10@example.com', 'Hannah', 'King', '1999-10-29', false, 'GRADUATED'),
+('ian.wright11@example.com', 'Ian', 'Wright', '2000-05-20', true, 'SUSPENDED'),
+('julia.baker12@example.com', 'Julia', 'Baker', '2001-04-18', false, 'DROPPED'),
+('kevin.morris13@example.com', 'Kevin', 'Morris', '1998-08-07', true, 'ACTIVE'),
+('linda.turner14@example.com', 'Linda', 'Turner', '1999-09-24', false, 'GRADUATED'),
+('mike.scott15@example.com', 'Mike', 'Scott', '2000-01-05', true, 'SUSPENDED'),
+('nancy.lee16@example.com', 'Nancy', 'Lee', '2002-02-12', false, 'DROPPED'),
+('oliver.taylor17@example.com', 'Oliver', 'Taylor', '2001-07-09', true, 'ACTIVE'),
+('peter.walker18@example.com', 'Peter', 'Walker', '1999-11-30', false, 'GRADUATED'),
+('quinn.clark19@example.com', 'Quinn', 'Clark', '2000-06-03', true, 'SUSPENDED'),
+('rachel.lewis20@example.com', 'Rachel', 'Lewis', '2001-08-21', false, 'DROPPED');

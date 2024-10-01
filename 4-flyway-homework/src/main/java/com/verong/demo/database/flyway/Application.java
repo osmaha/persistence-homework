@@ -1,10 +1,12 @@
 package com.verong.demo.database.flyway;
 
+import org.flywaydb.core.Flyway;
+
 public class Application {
 
-    private static final String DATASOURCE_URL = "";
-    private static final String DATASOURCE_USER = "";
-    private static final String DATASOURCE_PASSWORD = "";
+    private static final String DATASOURCE_URL = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String DATASOURCE_USER = "postgres";
+    private static final String DATASOURCE_PASSWORD = "postgres";
 
     public static void main(String[] args) {
 
@@ -27,7 +29,12 @@ public class Application {
                         since they have been already run by Flyway.
         */
 
-        //TODO: create the Flyway instance and run migrations
+        Flyway flyway = Flyway.configure()
+                .dataSource(DATASOURCE_URL, DATASOURCE_USER, DATASOURCE_PASSWORD)
+                .schemas("test")
+                .locations("db/migration")
+                .load();
 
+        flyway.migrate();
     }
 }
