@@ -24,5 +24,17 @@
             <version>1.18.34</version>
         </dependency>
 
+        <!-- I have added postgreSQL JDBC Driver to communicate with PostgreSQL Database-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+            <version>10.14.0</version>
+        </dependency>
     </dependencies>
 </project>
