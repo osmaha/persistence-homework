@@ -24,12 +24,24 @@
             <version>1.18.34</version>
         </dependency>
 
-        <!-- This dependency is for adding interfaces and annotation of JPA (if you add the dependency of "hibernate-core",
-              it is also present here as Hibernate implements all interfaces of JPA) -->
+        <!-- I have added postgreSQL JDBC Driver to communicate with PostgreSQL Database-->
         <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-            <version>3.1.0</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
+        </dependency>
+
+        <!-- A new dependency that have to add to work with Hibernate-->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.6.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>6.6.1.Final</version>
         </dependency>
 
     </dependencies>
