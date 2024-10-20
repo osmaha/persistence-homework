@@ -3,14 +3,13 @@ package com.verong.demo.database.custom.hibernate;
 import com.verong.demo.database.custom.hibernate.persistence.model.Student;
 import com.verong.demo.database.custom.hibernate.persistence.orm.MyEntityManager;
 import com.verong.demo.database.custom.hibernate.persistence.orm.MyEntityManagerImpl;
-
-import javax.sql.DataSource;
+import org.postgresql.ds.PGSimpleDataSource;
 
 public class Application {
 
-    private static final String DATASOURCE_URL = "";
-    private static final String DATASOURCE_USER = "";
-    private static final String DATASOURCE_PASSWORD = "";
+    private static final String DATASOURCE_URL = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String DATASOURCE_USER = "postgres";
+    private static final String DATASOURCE_PASSWORD = "postgres";
 
     public static void main(String[] args) {
 
@@ -23,13 +22,14 @@ public class Application {
             - test you method if it works correctly;
         */
 
-        // TODO: initialize and configure your DataSource
-        DataSource dataSource = null;
+        PGSimpleDataSource dataSource = new PGSimpleDataSource();
+        dataSource.setURL(DATASOURCE_URL);
+        dataSource.setUser(DATASOURCE_USER);
+        dataSource.setPassword(DATASOURCE_PASSWORD);
 
-        // TODO: implement and initialize your implementation to use it later in a code
         MyEntityManager myEntityManager = new MyEntityManagerImpl(dataSource);
 
-        var student = myEntityManager.findById(Student.class, 1L);
+        var student = myEntityManager.findById(Student.class, 2L);
 
         System.out.println("Student (found by MyEntityManager): %s".formatted(student));
     }
